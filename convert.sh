@@ -2,6 +2,8 @@
 
 for i in $@;
 do
-    echo Converting $i to ${i/.png/.avif}
-    avifenc -q 100 $i ${i/.png/.avif}
+    echo
+    echo Converting $i
+    #avifenc -q 100 $i ${i/.png/.avif}
+    cwebp -lossless $i -o ${i/.png/.webp}
 done
